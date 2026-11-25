@@ -1,0 +1,178 @@
+/* Global design tokens and base styling for JobTrack */
+:root {
+  --jt-primary: #2563eb;
+  --jt-primary-dark: #1d4ed8;
+  --jt-primary-soft: #eff6ff;
+  --jt-secondary: #7c3aed;
+  --jt-secondary-soft: #f5f3ff;
+  --jt-success: #22c55e;
+  --jt-success-soft: #f0fdf4;
+  --jt-danger: #ef4444;
+  --jt-danger-soft: #fef2f2;
+  --jt-warning: #f59e0b;
+  --jt-bg: #f8fafc;
+  --jt-surface: #ffffff;
+  --jt-text: #1e293b;
+  --jt-muted: #64748b;
+  --jt-border: #e2e8f0;
+  --jt-shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.06), 0 1px 2px rgba(15, 23, 42, 0.04);
+  --jt-shadow-md: 0 10px 25px -5px rgba(15, 23, 42, 0.08), 0 8px 10px -6px rgba(15, 23, 42, 0.04);
+  --jt-radius: 1rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: var(--jt-bg);
+  color: var(--jt-text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Override Bootstrap primary/secondary accents to match the JobTrack palette */
+.btn-primary {
+  background-color: var(--jt-primary);
+  border-color: var(--jt-primary);
+  font-weight: 600;
+  border-radius: 0.625rem;
+  padding: 0.6rem 1.25rem;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+}
+
+.btn-primary:hover,
+.btn-primary:focus-visible {
+  background-color: var(--jt-primary-dark);
+  border-color: var(--jt-primary-dark);
+  box-shadow: 0 6px 16px rgba(37, 99, 235, 0.25);
+  transform: translateY(-1px);
+}
+
+.btn-outline-primary {
+  color: var(--jt-primary);
+  border-color: var(--jt-primary);
+  font-weight: 600;
+  border-radius: 0.625rem;
+  padding: 0.6rem 1.25rem;
+}
+
+.btn-outline-primary:hover,
+.btn-outline-primary:focus-visible {
+  background-color: var(--jt-primary);
+  border-color: var(--jt-primary);
+}
+
+.btn-purple {
+  background-color: var(--jt-secondary);
+  border-color: var(--jt-secondary);
+  color: #ffffff;
+  font-weight: 600;
+  border-radius: 0.625rem;
+  padding: 0.6rem 1.25rem;
+}
+
+.btn-purple:hover,
+.btn-purple:focus-visible {
+  background-color: #6d28d9;
+  border-color: #6d28d9;
+  color: #ffffff;
+}
+
+/* Accessible focus outline */
+:where(a, button, input, select, textarea):focus-visible {
+  outline: 3px solid rgba(37, 99, 235, 0.55);
+  outline-offset: 2px;
+}
+
+/* Skip link for keyboard accessibility */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0.75rem;
+  z-index: 1080;
+  background: var(--jt-primary);
+  color: #ffffff;
+  padding: 0.6rem 1rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.skip-link:focus {
+  left: 0.75rem;
+}
+
+/* Form controls */
+.form-control,
+.form-select {
+  border-color: #cbd5e1;
+  border-radius: 0.625rem;
+  padding: 0.625rem 0.9rem;
+  color: var(--jt-text);
+  font-size: max(1rem, 1em);
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--jt-primary);
+  box-shadow: 0 0 0 0.2rem rgba(37, 99, 235, 0.15);
+}
+
+.form-label {
+  font-weight: 600;
+  color: var(--jt-text);
+  margin-bottom: 0.35rem;
+}
+
+/* Reusable elevated SaaS card */
+.jt-card {
+  background-color: var(--jt-surface);
+  border: 1px solid var(--jt-border);
+  border-radius: var(--jt-radius);
+  box-shadow: var(--jt-shadow-sm);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.jt-card-hover:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--jt-shadow-md);
+}
+
+/* Status badges matching exact palette */
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.status-applied {
+  background-color: #dbeafe;
+  color: #1d4ed8;
+}
+
+.status-interview {
+  background-color: #ede9fe;
+  color: #6d28d9;
+}
+
+.status-selected {
+  background-color: #dcfce7;
+  color: #15803d;
+}
+
+.status-rejected {
+  background-color: #fee2e2;
+  color: #b91c1c;
+}
