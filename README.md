@@ -81,7 +81,6 @@ The project can be deployed using Vercel by connecting the GitHub repository and
 🔗 Project Links
 
 - GitHub Repository: https://github.com/nikitha-2105-kalangi/Hackathon_review
-- Live Demo: Add your Vercel deployment URL here after deployment.
 
 🔮 Future Enhancements
 
@@ -96,8 +95,7 @@ The project can be deployed using Vercel by connecting the GitHub repository and
 Project Name: JobTrack – Online Job Application Tracker
 
 Project Type: Hackathon Project
-
-Tagline: Your Career, Organized.
+ Your Career, Organized.
 
 ---
 
